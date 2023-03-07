@@ -1,4 +1,4 @@
-package com.example.kafkawebfluxexercise
+package com.example.kafkawebfluxexercise.config
 
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
@@ -12,7 +12,7 @@ import org.springframework.kafka.core.ProducerFactory
 
 @Configuration
 class KafkaProducerConfig {
-    @Value("\${bootstrap-servers}")
+   @Value("\${spring.kafka.bootstrap-servers}")
     private var bootstrapAddress: String = ""
     @Bean
     fun producerFactory(): ProducerFactory<String, String> {

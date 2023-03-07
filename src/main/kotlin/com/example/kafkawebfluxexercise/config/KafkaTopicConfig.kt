@@ -1,4 +1,4 @@
-package com.example.kafkawebfluxexercise
+package com.example.kafkawebfluxexercise.config
 
 import org.apache.kafka.clients.admin.AdminClientConfig
 import org.apache.kafka.clients.admin.NewTopic
@@ -12,9 +12,8 @@ import org.springframework.kafka.core.KafkaAdmin
 
 @Configuration
 @PropertySource("classpath:application.properties")
-@ConfigurationProperties(prefix = "spring.kafka")
 class KafkaTopicConfig {
-    @Value("\${bootstrap-servers}")
+    @Value("\${spring.kafka.bootstrap-servers}")
     private var bootstrapAddress: String = ""
 
     @Bean

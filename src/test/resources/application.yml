@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: testGroupId
+test:
+  topic: embedded-test-topic
+
+bootstrap:
+  servers: [PLAINTEXT://localhost:32789]
